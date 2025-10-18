@@ -1,0 +1,14 @@
+node_modules
+# Dependencies
+node_modules/
+build/
+
+# Environment files
+.env
+
+# System files
+.DS_Store
+
+# Truffle & Ganache files
+*.log
+.cache/
