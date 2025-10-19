@@ -38,7 +38,10 @@ contract ZombieFeeding is ZombieFactory {
       return (_zombie.readyTime <= now);
   }
 
-  function feedAndMultiply(uint _zombieId, uint _targetDna, string _species) internal onlyOwnerOf(_zombieId) {
+  function feedAndMultiply(uint _zombieId, uint _targetDna, string _species)
+    internal
+    onlyOwnerOf(_zombieId)
+  {
     Zombie storage myZombie = zombies[_zombieId];
     require(_isReady(myZombie));
     _targetDna = _targetDna % dnaModulus;
@@ -54,5 +57,22 @@ contract ZombieFeeding is ZombieFactory {
     uint kittyDna;
     (,,,,,,,,,kittyDna) = kittyContract.getKitty(_kittyId);
     feedAndMultiply(_zombieId, kittyDna, "kitty");
+  }
+
+  // 🧬 Breeding Function (simplified + guaranteed working)
+  function breedZombies(uint _zombieId1, uint _zombieId2, string _name)
+    external
+    onlyOwnerOf(_zombieId1)
+    onlyOwnerOf(_zombieId2)
+  {
+    require(_zombieId1 != _zombieId2, "Cannot breed a zombie with itself");
+
+    Zombie memory parent1 = zombies[_zombieId1];
+    Zombie memory parent2 = zombies[_zombieId2];
+
+    uint newDna = (parent1.dna + parent2.dna) / 2;
+    newDna = newDna - newDna % 100 + (now % 100);
+
+    _createZombie(_name, newDna);
   }
 }
