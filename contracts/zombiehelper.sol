@@ -6,6 +6,8 @@ contract ZombieHelper is ZombieFeeding {
 
   uint levelUpFee = 0.001 ether;
 
+  event ZombieDeleted(uint indexed zombieId, address indexed owner);
+
   modifier aboveLevel(uint _level, uint _zombieId) {
     require(zombies[_zombieId].level >= _level);
     _;
@@ -25,11 +27,12 @@ contract ZombieHelper is ZombieFeeding {
     zombies[_zombieId].level = zombies[_zombieId].level.add(1);
   }
 
+  // ✏️ Updated changeName — removed aboveLevel restriction
   function changeName(uint _zombieId, string _newName)
     external
-    aboveLevel(2, _zombieId)
     onlyOwnerOf(_zombieId)
   {
+    require(bytes(_newName).length > 0, "Name cannot be empty");
     zombies[_zombieId].name = _newName;
   }
 
@@ -51,5 +54,26 @@ contract ZombieHelper is ZombieFeeding {
       }
     }
     return result;
+  }
+
+  // 🗑️ Delete Zombie
+  function deleteZombie(uint _zombieId) external onlyOwnerOf(_zombieId) {
+    // decrease owner's zombie count
+    ownerZombieCount[msg.sender] = ownerZombieCount[msg.sender].sub(1);
+
+    uint lastId = zombies.length - 1;
+
+    if (_zombieId != lastId) {
+      // Move the last zombie into the slot being deleted
+      Zombie storage lastZombie = zombies[lastId];
+      zombies[_zombieId] = lastZombie;
+      zombieToOwner[_zombieId] = zombieToOwner[lastId];
+    }
+
+    // Clear mapping and shrink array
+    delete zombieToOwner[lastId];
+    zombies.length--;
+
+    emit ZombieDeleted(_zombieId, msg.sender);
   }
 }

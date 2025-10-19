@@ -2,10 +2,7 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_zombieId",
-        "type": "uint256"
-      }
+      { "name": "_zombieId", "type": "uint256" }
     ],
     "name": "levelUp",
     "outputs": [],
@@ -16,14 +13,8 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_zombieId",
-        "type": "uint256"
-      },
-      {
-        "name": "_kittyId",
-        "type": "uint256"
-      }
+      { "name": "_zombieId", "type": "uint256" },
+      { "name": "_kittyId", "type": "uint256" }
     ],
     "name": "feedOnKitty",
     "outputs": [],
@@ -34,37 +25,16 @@ var cryptoZombiesABI = [
   {
     "constant": true,
     "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
+      { "name": "", "type": "uint256" }
     ],
     "name": "zombies",
     "outputs": [
-      {
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "name": "dna",
-        "type": "uint256"
-      },
-      {
-        "name": "level",
-        "type": "uint32"
-      },
-      {
-        "name": "readyTime",
-        "type": "uint32"
-      },
-      {
-        "name": "winCount",
-        "type": "uint16"
-      },
-      {
-        "name": "lossCount",
-        "type": "uint16"
-      }
+      { "name": "name", "type": "string" },
+      { "name": "dna", "type": "uint256" },
+      { "name": "level", "type": "uint32" },
+      { "name": "readyTime", "type": "uint32" },
+      { "name": "winCount", "type": "uint16" },
+      { "name": "lossCount", "type": "uint16" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -73,18 +43,9 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_zombieId1",
-        "type": "uint256"
-      },
-      {
-        "name": "_zombieId2",
-        "type": "uint256"
-      },
-      {
-        "name": "_name",
-        "type": "string"
-      }
+      { "name": "_zombieId1", "type": "uint256" },
+      { "name": "_zombieId2", "type": "uint256" },
+      { "name": "_name", "type": "string" }
     ],
     "name": "breedZombies",
     "outputs": [],
@@ -104,17 +65,11 @@ var cryptoZombiesABI = [
   {
     "constant": true,
     "inputs": [
-      {
-        "name": "_owner",
-        "type": "address"
-      }
+      { "name": "_owner", "type": "address" }
     ],
     "name": "getZombiesByOwner",
     "outputs": [
-      {
-        "name": "",
-        "type": "uint256[]"
-      }
+      { "name": "", "type": "uint256[]" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -123,17 +78,11 @@ var cryptoZombiesABI = [
   {
     "constant": true,
     "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
+      { "name": "", "type": "uint256" }
     ],
     "name": "zombieToOwner",
     "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
+      { "name": "", "type": "address" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -142,10 +91,7 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_address",
-        "type": "address"
-      }
+      { "name": "_address", "type": "address" }
     ],
     "name": "setKittyContractAddress",
     "outputs": [],
@@ -156,14 +102,8 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_zombieId",
-        "type": "uint256"
-      },
-      {
-        "name": "_newDna",
-        "type": "uint256"
-      }
+      { "name": "_zombieId", "type": "uint256" },
+      { "name": "_newDna", "type": "uint256" }
     ],
     "name": "changeDna",
     "outputs": [],
@@ -183,10 +123,7 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_name",
-        "type": "string"
-      }
+      { "name": "_name", "type": "string" }
     ],
     "name": "createRandomZombie",
     "outputs": [],
@@ -199,10 +136,7 @@ var cryptoZombiesABI = [
     "inputs": [],
     "name": "owner",
     "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
+      { "name": "", "type": "address" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -213,10 +147,7 @@ var cryptoZombiesABI = [
     "inputs": [],
     "name": "isOwner",
     "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
+      { "name": "", "type": "bool" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -225,14 +156,19 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_zombieId",
-        "type": "uint256"
-      },
-      {
-        "name": "_newName",
-        "type": "string"
-      }
+      { "name": "_zombieId", "type": "uint256" }
+    ],
+    "name": "deleteZombie",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_zombieId", "type": "uint256" },
+      { "name": "_newName", "type": "string" }
     ],
     "name": "changeName",
     "outputs": [],
@@ -243,10 +179,7 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_fee",
-        "type": "uint256"
-      }
+      { "name": "_fee", "type": "uint256" }
     ],
     "name": "setLevelUpFee",
     "outputs": [],
@@ -257,14 +190,8 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_zombieId",
-        "type": "uint256"
-      },
-      {
-        "name": "_targetId",
-        "type": "uint256"
-      }
+      { "name": "_zombieId", "type": "uint256" },
+      { "name": "_targetId", "type": "uint256" }
     ],
     "name": "attack",
     "outputs": [],
@@ -275,10 +202,7 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "newOwner",
-        "type": "address"
-      }
+      { "name": "newOwner", "type": "address" }
     ],
     "name": "transferOwnership",
     "outputs": [],
@@ -289,21 +213,9 @@ var cryptoZombiesABI = [
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": true,
-        "name": "_from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "_to",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "_tokenId",
-        "type": "uint256"
-      }
+      { "indexed": true, "name": "_from", "type": "address" },
+      { "indexed": true, "name": "_to", "type": "address" },
+      { "indexed": true, "name": "_tokenId", "type": "uint256" }
     ],
     "name": "Transfer",
     "type": "event"
@@ -311,21 +223,9 @@ var cryptoZombiesABI = [
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": true,
-        "name": "_owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "_approved",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "_tokenId",
-        "type": "uint256"
-      }
+      { "indexed": true, "name": "_owner", "type": "address" },
+      { "indexed": true, "name": "_approved", "type": "address" },
+      { "indexed": true, "name": "_tokenId", "type": "uint256" }
     ],
     "name": "Approval",
     "type": "event"
@@ -333,21 +233,18 @@ var cryptoZombiesABI = [
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": false,
-        "name": "zombieId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "indexed": false,
-        "name": "dna",
-        "type": "uint256"
-      }
+      { "indexed": true, "name": "zombieId", "type": "uint256" },
+      { "indexed": true, "name": "owner", "type": "address" }
+    ],
+    "name": "ZombieDeleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "zombieId", "type": "uint256" },
+      { "indexed": false, "name": "name", "type": "string" },
+      { "indexed": false, "name": "dna", "type": "uint256" }
     ],
     "name": "NewZombie",
     "type": "event"
@@ -355,16 +252,8 @@ var cryptoZombiesABI = [
   {
     "anonymous": false,
     "inputs": [
-      {
-        "indexed": true,
-        "name": "previousOwner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "name": "newOwner",
-        "type": "address"
-      }
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
     ],
     "name": "OwnershipTransferred",
     "type": "event"
@@ -372,17 +261,11 @@ var cryptoZombiesABI = [
   {
     "constant": true,
     "inputs": [
-      {
-        "name": "_owner",
-        "type": "address"
-      }
+      { "name": "_owner", "type": "address" }
     ],
     "name": "balanceOf",
     "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
+      { "name": "", "type": "uint256" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -391,17 +274,11 @@ var cryptoZombiesABI = [
   {
     "constant": true,
     "inputs": [
-      {
-        "name": "_tokenId",
-        "type": "uint256"
-      }
+      { "name": "_tokenId", "type": "uint256" }
     ],
     "name": "ownerOf",
     "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
+      { "name": "", "type": "address" }
     ],
     "payable": false,
     "stateMutability": "view",
@@ -410,18 +287,9 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_from",
-        "type": "address"
-      },
-      {
-        "name": "_to",
-        "type": "address"
-      },
-      {
-        "name": "_tokenId",
-        "type": "uint256"
-      }
+      { "name": "_from", "type": "address" },
+      { "name": "_to", "type": "address" },
+      { "name": "_tokenId", "type": "uint256" }
     ],
     "name": "transferFrom",
     "outputs": [],
@@ -432,14 +300,8 @@ var cryptoZombiesABI = [
   {
     "constant": false,
     "inputs": [
-      {
-        "name": "_approved",
-        "type": "address"
-      },
-      {
-        "name": "_tokenId",
-        "type": "uint256"
-      }
+      { "name": "_approved", "type": "address" },
+      { "name": "_tokenId", "type": "uint256" }
     ],
     "name": "approve",
     "outputs": [],
@@ -447,5 +309,4 @@ var cryptoZombiesABI = [
     "stateMutability": "payable",
     "type": "function"
   }
-]
-  
+];
